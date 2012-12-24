@@ -1,6 +1,13 @@
 model_form
 ==========
 
+Features
+========
+
+* additional callbacks and validations
+* virtual attributes
+* 
+
 Goals
 =====
 
