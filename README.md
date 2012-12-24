@@ -1,8 +1,17 @@
 model_form
 ==========
 
+Goals
+=====
+
+* nested - extract or make an alternative of `accepts_nested_attributes_for`
+* multi-form - one form may consists of > 1 model
+* transaction safe
+* 
+
 Inspiration
 ===========
+
 Related: PORO, DAO, ServiceLayer
 
 Frameworks:
