@@ -52,7 +52,7 @@ end
 
 
 class ArticleForm < ModelForm
-  attr_accessible :header, :description, :photos_attributes
+  attr_accessible :header, :description, :photos
 
   attribute :accepted, Boolean
   
@@ -69,6 +69,7 @@ class ArticleForm < ModelForm
   validates :name, presence: true
   
   # class_name by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
+  # no photos_attributes
   nested_attributes :photos
   
   def accepted=(accepted)
@@ -85,4 +86,11 @@ class ArticleForm < ModelForm
     # translation logic here
   end
 end
+
+article_form = ArticleForm.new(header: 'Header name', description: 'Some description here', photos: [{id: 1, name: 'some name'}, {name: 'new'}])
+article_form.assign_attributes header: 'Update header name'
+article_form.save # or save!
+article_form.valid?
+article_form.invalid?
+article_form.errors
 ```
