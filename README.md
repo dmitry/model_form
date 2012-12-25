@@ -72,7 +72,6 @@ class ArticleForm < ModelForm
   
   validates :name, presence: true
   
-  # class_name by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
   # no photos_attributes - think about it, because ActiveRecord and ActionPack have some references on _attributes
   nested_attributes :photos
   
@@ -98,3 +97,38 @@ article_form.valid?
 article_form.invalid?
 article_form.errors
 ```
+
+API
+
+`attr_accessible`
+may take block or list of attributes to whitelist
+
+`attribute(name, type)`
+add virtual attribute to a form with specific type
+
+`assign_attributes`
+
+
+`after_assign`
+callback takes block and invokes after `assign_attributes`
+
+`before_validaiton`
+callback takes block and invokes after `after_assign` and before validations
+
+`validates`
+callback takes block and invokes after all the validations invoked
+
+`nested_attributes(association_name, options={})`
+
+* association_name: association name that used in one of association types
+* options:
+* class_name - by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
+* reject_if - 
+* allow_destroy - 
+* TODO
+
+Pending callbacks:
+
+* before_save
+* after_save
+* after_commit
