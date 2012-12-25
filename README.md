@@ -101,42 +101,47 @@ article_form.errors
 API
 
 `attr_accessible`
+
 may take block or list of attributes to whitelist
 
 `attribute(name, type)`
+
 add virtual attribute to a form with specific type
 
 `assign_attributes`
 
 
 `after_assign`
+
 callback takes block and invokes after `assign_attributes`
 
 `before_validaiton`
+
 callback takes block and invokes after `after_assign` and before validations
 
 `validates`
+
 callback takes block and invokes after all the validations invoked
 
 `nested_attributes(association_name, options={})`
 
-* association_name: association name that used in one of association types
+* `association_name`: association name that used in one of association types
 * options:
-* class_name - by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
-* reject_if - 
-* allow_destroy - 
-* TODO
+* `class_name` - by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
+* `reject_if` - 
+* `allow_destroy` - 
+* TODO more
 
-valid?
-invalid?
-save
-save!
-model
-params
-errors - TODO think how it should be: nested or plain!?
+* `valid?`
+* `invalid?`
+* `save`
+* `save!`
+* `model`
+* `params`
+* `errors` - TODO think how it should be: nested or plain!?
 
 Pending callbacks:
 
-* before_save
-* after_save
-* after_commit
+* `before_save`
+* `after_save`
+* `after_commit`
