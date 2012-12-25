@@ -127,6 +127,14 @@ callback takes block and invokes after all the validations invoked
 * allow_destroy - 
 * TODO
 
+valid?
+invalid?
+save
+save!
+model
+params
+errors - TODO think how it should be: nested or plain!?
+
 Pending callbacks:
 
 * before_save
