@@ -69,7 +69,7 @@ class ArticleForm < ModelForm
   validates :name, presence: true
   
   # class_name by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
-  # no photos_attributes
+  # no photos_attributes - think about it, because ActiveRecord and ActionPack have some references on _attributes
   nested_attributes :photos
   
   def accepted=(accepted)
