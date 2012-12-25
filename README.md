@@ -24,7 +24,7 @@ Related: PORO, DAO, ServiceLayer
 Frameworks:
 
 * Django - ModelForms
-* Symfony - Forms
+* Symfony - Forms (http://symfony.com/doc/current/book/forms.html#index-15)
 
 Articles:
 
@@ -37,3 +37,50 @@ Gems:
 * https://github.com/MSch/activemodel-form
 * https://github.com/joevandyk/cat_forms
 * https://github.com/ClearFit/redtape
+
+Concept example
+===============
+    
+    class Article < ActiveRecord::Base
+      has_many :photos
+    end
+    
+    class Photo < ActiveRecord::Base
+      # belongs_to :article
+    end
+
+
+    class ArticleForm < ModelForm
+      attr_accessible :header, :description, :photos_attributes
+    
+      attribute :accepted, Boolean
+      
+      after_assign do
+        self.description = translate(description, :en, :ru)
+        
+        # triggers after_assign in nested attribute
+      end
+      
+      before_validaiton do
+        # runs after_assign
+      end
+      
+      validates :name, presence: true
+      
+      # class_name by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
+      nested_attributes :photos
+      
+      def accepted=(accepted)
+        self.accepted_at = accepted ? Time.now : nil
+      end
+      
+      class PhotoForm # < NestedForm
+        
+      end
+      
+      private
+      
+      def translate(text, from, to)
+        # translation logic here
+      end
+    end
