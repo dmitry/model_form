@@ -38,6 +38,10 @@ Gems:
 * https://github.com/joevandyk/cat_forms
 * https://github.com/ClearFit/redtape
 
+Additional readings:
+
+* https://github.com/rails/rails/pull/8189 - rails pull request for refactoring multi-parameter to a controller; nice idea to have it in this gem
+
 Concept example
 ===============
     
