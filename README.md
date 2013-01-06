@@ -155,10 +155,10 @@ API
 
 `errors` - TODO think how it should be: nested or plain!?
 
-##### nested_attributes(association_name, options={}) [nested_attributes] #####
+##### nested_attributes
 
 * `association_name`: association name that used in one of association types
-* `options`
+* `options` by default is `{}`
  * `class_name` by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
  * `reject_if`
  * `allow_destroy`
