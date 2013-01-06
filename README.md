@@ -116,30 +116,43 @@ API
 ##### assign_attributes
 
 `before_assign`
+
 `after_assign`
 
 ##### save
 
 `before_validaiton`
+
 `before_save`
+
 `after_save`
+
 `after_commit`
 
 #### Class
 
 `attr_accessible` may take block or list of attributes to whitelist
+
 `attribute(name, type)` add virtual attribute to a form with specific type
+
 [`nested_attributes(association_name, options={})`](#nested_attributes) add ability to set nested attributes for some association
 
 #### Instance
 
 `assign_attributes`
+
 `valid?`
+
 `invalid?`
+
 `save`
+
 `save!`
+
 `model`
+
 `params`
+
 `errors` - TODO think how it should be: nested or plain!?
 
 ##### nested_attributes(association_name, options={}) [nested_attributes] #####
