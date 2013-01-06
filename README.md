@@ -1,12 +1,10 @@
-model_form
-==========
+# model_form
 
 In a big or even medium project fat controllers and models can become a real problem.
 With that gem you can move specific form parts of your logic to a `forms`.
 
 
-Features
-========
+## Features
 
 * callbacks and validations
 * virtual attributes
@@ -15,14 +13,13 @@ Features
  * without `_attributes` postfix
 * transaction safe (same as autosave)
 
-Future
-======
+## Future support
 
 * multi-form - one form may consists of > 1 model
 * orm agnostic: activerecord, mongoid
+* multiparameter attributes
 
-Inspiration
-===========
+## Inspiration
 
 Related: PORO, DAO, Service Object
 
@@ -53,8 +50,7 @@ Additional readings:
 
 * https://github.com/rails/rails/pull/8189 - rails pull request for refactoring multi-parameter to a controller; nice idea to have it in this gem
 
-Concept example
-===============
+## Concept example
     
 ```ruby
 class Article < ActiveRecord::Base
@@ -109,9 +105,9 @@ article_form.invalid?
 article_form.errors
 ```
 
-API
+## API
 
-#### Callbacks
+### Callbacks
 
 ##### assign_attributes
 
@@ -129,7 +125,7 @@ API
 
 `after_commit`
 
-#### Class
+### Class
 
 `attr_accessible` may take block or list of attributes to whitelist
 
@@ -137,7 +133,7 @@ API
 
 [`nested_attributes(association_name, options={})`](#nested_attributes) add ability to set nested attributes for some association
 
-#### Instance
+### Instance
 
 `assign_attributes`
 
@@ -155,6 +151,8 @@ API
 
 `errors` - TODO think how it should be: nested or plain!?
 
+## Extended API description
+
 ##### nested_attributes
 
 * `association_name`: association name that used in one of association types
@@ -162,3 +160,8 @@ API
  * `class_name` by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
  * `reject_if`
  * `allow_destroy`
+
+## What else?!
+
+From the beginning I've tried to develop this gem with `RDD` (Readme Driven Development - http://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
+As you can see, it not works yet, but the idea lives.
