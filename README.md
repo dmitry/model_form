@@ -1,25 +1,30 @@
 model_form
 ==========
 
+In a big or even medium project fat controllers and models can become a real problem.
+With that gem you can move specific form parts of your logic to a `forms`.
+
+
 Features
 ========
 
-* additional callbacks and validations
+* callbacks and validations
 * virtual attributes
-* 
+* nested attributes (can be replacements for a `accepts_nested_attributes_for` in your model)
+ * with correct error messages mapped to the nested attributes
+ * without `_attributes` postfix
+* transaction safe (same as autosave)
 
-Goals
-=====
+Future
+======
 
-* nested - extract or make an alternative of `accepts_nested_attributes_for`
 * multi-form - one form may consists of > 1 model
-* transaction safe
-* 
+* orm agnostic: activerecord, mongoid
 
 Inspiration
 ===========
 
-Related: PORO, DAO, ServiceLayer
+Related: PORO, DAO, Service Object
 
 Frameworks:
 
@@ -32,11 +37,17 @@ Articles:
 * http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/
 * http://www.devcaffeine.com/2012/06/20/isolating-validations-in-activemodel/
 
+Videos:
+
+* http://railscasts.com/episodes/16-virtual-attributes
+* http://railscasts.com/episodes/398-service-objects
+
 Gems:
 
+* https://github.com/ClearFit/redtape - nested attributes
 * https://github.com/MSch/activemodel-form
+* https://github.com/saratovsource/form_object
 * https://github.com/joevandyk/cat_forms
-* https://github.com/ClearFit/redtape
 
 Additional readings:
 
@@ -100,48 +111,41 @@ article_form.errors
 
 API
 
-`attr_accessible`
+#### Callbacks
 
-may take block or list of attributes to whitelist
+##### assign_attributes
 
-`attribute(name, type)`
-
-add virtual attribute to a form with specific type
-
-`assign_attributes`
-
-
+`before_assign`
 `after_assign`
 
-callback takes block and invokes after `assign_attributes`
+##### save
 
 `before_validaiton`
+`before_save`
+`after_save`
+`after_commit`
 
-callback takes block and invokes after `after_assign` and before validations
+#### Class
 
-`validates`
+`attr_accessible` may take block or list of attributes to whitelist
+`attribute(name, type)` add virtual attribute to a form with specific type
+[`nested_attributes(association_name, options={})`](#nested_attributes) add ability to set nested attributes for some association
 
-callback takes block and invokes after all the validations invoked
+#### Instance
 
-`nested_attributes(association_name, options={})`
+`assign_attributes`
+`valid?`
+`invalid?`
+`save`
+`save!`
+`model`
+`params`
+`errors` - TODO think how it should be: nested or plain!?
+
+##### nested_attributes(association_name, options={}) [nested_attributes] #####
 
 * `association_name`: association name that used in one of association types
-* options:
-* `class_name` - by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
-* `reject_if` - 
-* `allow_destroy` - 
-* TODO more
-
-* `valid?`
-* `invalid?`
-* `save`
-* `save!`
-* `model`
-* `params`
-* `errors` - TODO think how it should be: nested or plain!?
-
-Pending callbacks:
-
-* `before_save`
-* `after_save`
-* `after_commit`
+* `options`
+ * `class_name` by default "#{attribute_name.to_s.singularize.camelcase}Form", but can be a model or other ModelForm
+ * `reject_if`
+ * `allow_destroy`
