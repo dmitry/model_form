@@ -41,6 +41,7 @@ Videos:
 
 Gems:
 
+* https://github.com/mbj/mutant - more or less that gem would be
 * https://github.com/ClearFit/redtape - nested attributes
 * https://github.com/MSch/activemodel-form
 * https://github.com/saratovsource/form_object
