@@ -43,6 +43,7 @@ Videos:
 Gems:
 
 * https://github.com/fredwu/datamappify
+* https://github.com/apotonick/reform
 * https://github.com/cypriss/mutations - more or less that gem would be
 * https://github.com/ClearFit/redtape - nested attributes
 * https://github.com/MSch/activemodel-form
