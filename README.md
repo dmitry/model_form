@@ -34,6 +34,7 @@ Articles:
 * http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/
 * http://www.devcaffeine.com/2012/06/20/isolating-validations-in-activemodel/
 * http://fredwu.me/post/54009567748/datamappify-a-new-take-on-decoupling-domain-form-and
+* http://brainspec.com/blog/2012/07/09/activerecord-inheritance-contexts/ - context technique
 
 Videos:
 
