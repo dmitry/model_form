@@ -51,6 +51,10 @@ Gems:
 * https://github.com/MSch/activemodel-form
 * https://github.com/saratovsource/form_object
 * https://github.com/joevandyk/cat_forms
+* https://github.com/brycesenz/freeform
+* https://github.com/braintree/curator
+* https://github.com/nulogy/edr
+* https://github.com/joakimk/minimapper
 
 Additional readings:
 
