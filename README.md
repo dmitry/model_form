@@ -55,6 +55,7 @@ Gems:
 * https://github.com/braintree/curator
 * https://github.com/nulogy/edr
 * https://github.com/joakimk/minimapper
+* https://github.com/GCorbel/activeform-rails
 
 Additional readings:
 
