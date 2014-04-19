@@ -35,6 +35,7 @@ Articles:
 * http://www.devcaffeine.com/2012/06/20/isolating-validations-in-activemodel/
 * http://fredwu.me/post/54009567748/datamappify-a-new-take-on-decoupling-domain-form-and
 * http://brainspec.com/blog/2012/07/09/activerecord-inheritance-contexts/ - context technique
+* http://rubyflow.ru/items/1481 - in russian language about `form_logic` gem
 
 Videos:
 
@@ -56,6 +57,7 @@ Gems:
 * https://github.com/nulogy/edr
 * https://github.com/joakimk/minimapper
 * https://github.com/GCorbel/activeform-rails
+* https://github.com/shlima/form_logic
 
 Additional readings:
 
