@@ -44,10 +44,11 @@ Videos:
 
 Gems:
 
+* https://github.com/orgsync/active_interaction - prefer that over everything else
+* https://github.com/cypriss/mutations - more or less that gem would be
 * https://github.com/fredwu/datamappify
 * https://github.com/hookercookerman/form_model
 * https://github.com/apotonick/reform
-* https://github.com/cypriss/mutations - more or less that gem would be
 * https://github.com/ClearFit/redtape - nested attributes
 * https://github.com/MSch/activemodel-form
 * https://github.com/saratovsource/form_object
